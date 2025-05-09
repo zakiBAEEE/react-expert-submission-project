@@ -9,6 +9,7 @@ import { DetailPage } from "./pages/DetailPage"
 import { LeaderboardsPages } from "./pages/LeaderboardsPages"
 import { NavbarDefault } from "./components/Navbar"
 import { AddThreadPages } from "./pages/AddThreadPages"
+import Loading from "./components/Loading"
 function App() {
   const isPreload = useSelector((state) => state.isPreload);
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 gap-y-3">
+      <Loading />
       <NavbarDefault />
       <Routes>
         <Route path="/login" element={<LoginPage />} />

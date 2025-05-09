@@ -5,6 +5,7 @@ import { threadsReducer } from "./threads/reducer";
 import { threadDetailReducer } from "./threadDetail/reducer";
 import { usersReducer } from "./users/reducer";
 import { leaderboardReducer } from "./leaderboard/reducer"
+import { loadingBarReducer } from "react-redux-loading-bar";
 
 const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ const store = configureStore({
         threadDetail: threadDetailReducer,
         threads: threadsReducer,
         users: usersReducer,
-        leaderboards: leaderboardReducer
+        leaderboards: leaderboardReducer,
+        loadingBar: loadingBarReducer,
     }
 })
 
