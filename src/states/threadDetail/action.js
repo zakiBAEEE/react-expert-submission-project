@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import { getThreadDetail } from '../../utils/api/getThreadDetail';
 import { neutralizedVoteThread } from '../../utils/api/neutralizedVoteThread';
 import { toggleUpVoteThread } from '../../utils/api/toggleUpVoteThread';
@@ -33,13 +34,16 @@ function toggleUpVoteThreadDetail(authUser) {
 }
 
 function asyncReceiveThreadDetail(threadId) {
+
     return async (dispatch) => {
+        dispatch(showLoading());
         try {
             const threadDetail = await getThreadDetail(threadId);
             dispatch(receiveThreadDetailActionCreator(threadDetail))
         } catch (error) {
             alert(error.message)
         }
+        dispatch(hideLoading());
     }
 }
 

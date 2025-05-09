@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from "react-redux-loading-bar"
 import { createThread } from "../../utils/api/createThread"
 // import { getOwnProfile } from "../../utils/api/getOwnProfile"
 // import { toggleUpVoteThread } from "../../utils/api/toggleUpVoteThread"
@@ -39,13 +40,16 @@ function voteThreadActionCreator(threadId, userId) {
 
 function asyncAddThread({ title, body, category = '#general' }) {
     return async (dispatch) => {
+        dispatch(showLoading());
         try {
             const thread = await createThread({ title, body, category });
             dispatch(addThreadActionCreator(thread));
         } catch (error) {
             alert(error.message);
         }
+        dispatch(hideLoading());
     }
+
 }
 
 

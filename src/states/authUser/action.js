@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from 'react-redux-loading-bar'
 import { getOwnProfile } from '../../utils/api/getOwnProfile'
 import { login } from '../../utils/api/login'
 import { putAccessToken } from '../../utils/api/putAccessToken'
@@ -26,7 +27,9 @@ function unsetAuthUserActionCreator() {
 
 // Digunakan ketika user login
 function asynSetAuthUser({ email, password }) {
+
     return async (dispatch) => {
+        dispatch(showLoading());
         try {
             const token = await login(email, password);
             putAccessToken(token);
@@ -35,7 +38,7 @@ function asynSetAuthUser({ email, password }) {
         } catch (error) {
             alert(`${error.message} Error di asycn auth user`);
         }
-
+        dispatch(hideLoading());
     }
 }
 
