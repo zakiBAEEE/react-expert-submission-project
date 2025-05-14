@@ -1,18 +1,18 @@
-import { baseUrl } from "./baseUrl";
+import { baseUrl } from './baseUrl';
 async function getAllUsers() {
-    const response = await fetch(`${baseUrl}/users`);
+  const response = await fetch(`${baseUrl}/users`);
 
-    const responseJson = await response.json();
+  const responseJson = await response.json();
 
-    const { status, message } = responseJson;
+  const { status, message } = responseJson;
 
-    if (status !== 'success') {
-        throw new Error(message);
-    }
+  if (status !== 'success') {
+    throw new Error(message);
+  }
 
-    const { data: { users } } = responseJson;
+  const { data: { users } } = responseJson;
 
-    return users;
+  return users;
 }
 
-export { getAllUsers }
+export { getAllUsers };

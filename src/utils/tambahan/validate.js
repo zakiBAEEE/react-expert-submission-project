@@ -1,5 +1,5 @@
 const validate = (title, body) => {
-    return title.trim() !== "" || body.trim() !== "";
-}
+  return title.trim() !== '' || body.trim() !== '';
+};
 
-export { validate }
+export { validate };

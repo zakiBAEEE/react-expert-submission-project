@@ -1,14 +1,14 @@
-import { ActionType } from "./action";
+import { ActionType } from './action';
 
 function leaderboardReducer(leaderboards = [], action = {}) {
 
-    switch (action.type) {
-        case ActionType.RECEIVE_LEADERBOARD:
-            return action.payload.leaderboards
+  switch (action.type) {
+  case ActionType.RECEIVE_LEADERBOARD:
+    return action.payload.leaderboards;
 
-        default:
-            return leaderboards
-    }
+  default:
+    return leaderboards;
+  }
 }
 
-export { leaderboardReducer }
+export { leaderboardReducer };

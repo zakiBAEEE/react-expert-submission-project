@@ -1,27 +1,28 @@
-import { useDispatch, useSelector } from "react-redux"
-import { asyncPreload } from "./states/isPreload/action"
-import { useEffect } from "react"
-import { Route, Routes } from "react-router"
-import { LoginPage } from "./pages/LoginPage"
-import { RegisterPage } from "./pages/RegisterPage"
-import { HomePage } from "./pages/HomePage"
-import { DetailPage } from "./pages/DetailPage"
-import { LeaderboardsPages } from "./pages/LeaderboardsPages"
-import { NavbarDefault } from "./components/Navbar"
-import { AddThreadPages } from "./pages/AddThreadPages"
-import Loading from "./components/Loading"
+import { useDispatch, useSelector } from 'react-redux';
+import { asyncPreload } from './states/isPreload/action';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
+import { HomePage } from './pages/HomePage';
+import { DetailPage } from './pages/DetailPage';
+import { LeaderboardsPages } from './pages/LeaderboardsPages';
+import { NavbarDefault } from './components/Navbar';
+import { AddThreadPages } from './pages/AddThreadPages';
+import Loading from './components/Loading';
+import React from 'react';
 function App() {
   const isPreload = useSelector((state) => state.isPreload);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncPreload())
-  }, [dispatch])
+    dispatch(asyncPreload());
+  }, [dispatch]);
 
   if (isPreload) {
     return (
       null
-    )
+    );
   }
 
   return (
@@ -37,7 +38,7 @@ function App() {
         <Route path="/new" element={<AddThreadPages />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

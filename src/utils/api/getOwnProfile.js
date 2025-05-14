@@ -3,19 +3,19 @@ import { _fetchWithAuth } from './_fetchWithAuth';
 
 
 async function getOwnProfile() {
-    const response = await _fetchWithAuth(`${baseUrl}/users/me`);
+  const response = await _fetchWithAuth(`${baseUrl}/users/me`);
 
-    const responseJson = await response.json();
+  const responseJson = await response.json();
 
-    const { status, message } = responseJson;
+  const { status, message } = responseJson;
 
-    if (status !== 'success') {
-        throw new Error(message);
-    }
+  if (status !== 'success') {
+    throw new Error(message);
+  }
 
-    const { data: { user } } = responseJson;
+  const { data: { user } } = responseJson;
 
-    return user;
+  return user;
 }
 
-export { getOwnProfile }
+export { getOwnProfile };

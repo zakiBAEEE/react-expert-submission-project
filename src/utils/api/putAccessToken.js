@@ -1,5 +1,5 @@
 function putAccessToken(accesToken) {
-    localStorage.setItem('accessToken', accesToken);
+  localStorage.setItem('accessToken', accesToken);
 }
 
-export { putAccessToken }
+export { putAccessToken };

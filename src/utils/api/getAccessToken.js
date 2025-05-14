@@ -1,5 +1,5 @@
 function getAccessToken() {
-    return localStorage.getItem('accessToken');
+  return localStorage.getItem('accessToken');
 }
 
-export { getAccessToken }
+export { getAccessToken };

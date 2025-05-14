@@ -13,10 +13,10 @@ import { describe, it } from 'vitest';
 import LoginInput from '../components/LoginInput';
 
 describe('LoginInput Component', ()=>{
-    it('should handle username typing correctly', async()=>{
-        // Arrage
-        render(<LoginInput/>)
-        // Action
-        // Assert
-    })
-})
+  it('should handle username typing correctly', async ()=>{
+    // Arrage
+    render(<LoginInput/>);
+    // Action
+    // Assert
+  });
+});
