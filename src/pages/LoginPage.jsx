@@ -59,7 +59,6 @@ function LoginPage() {
           </p>
         </div>
       </div>
-
     );
   }
 

@@ -12,12 +12,14 @@ async function register({ name, email, password }) {
   const responseJson = await response.json();
 
   if (responseJson.status === 'success') {
+    console.log('Register Berhasil');
     console.log(responseJson);
     return responseJson.data.user;
   }
 
   else {
-    throw new Error(responseJson.message);
+    alert('GAGAL LOGIN COYY');
+    // throw new Error(responseJson.message);
 
   }
 }
